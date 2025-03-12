@@ -1,5 +1,6 @@
 import React from "react"
 import Header from "../common/header/Header"
+import Footer from "../common/footer/Footer";
 import About from "../about/About";
 import Services from "../services/Services";
 import Blog from "../blog/Blog";
@@ -20,6 +21,7 @@ const Pages = () => {
           <Route exact path="/pricing" component={Pricing} />
           <Route exact path="/contact" component={Contact} />
         </Switch>
+        <Footer />
       </Router>
     </>
   );
