@@ -160,7 +160,7 @@ const Footer = () => {
       {/* Legal / Copyright */}
       <div className="legal">
         <span>
-          © 2021 - {new Date().getFullYear()} RentUP. Designed By GorkCoder.
+          © 2021 - {new Date().getFullYear()} RentUP. Designed By Kashif saeed.
         </span>
       </div>
     </>
