@@ -78,11 +78,18 @@ const Footer = () => {
             <div className="logo">
               <img src="../images/logo-light.png" alt="RentUP Logo" />
               <h2>Do You Need Help With Anything?</h2>
-              <p>
-                Receive updates, hot deals, tutorials, discounts sent straight
-                in your inbox every month
-              </p>
-
+              <div className="newsletter-content">
+                <p>Stay ahead in the real estate market with our monthly newsletter:</p>
+                
+                <ul className="newsletter-benefits">
+                  <li>✅ New premium properties and hot deals first</li>
+                  <li>✅ Latest Lahore & Pakistan property market updates</li>
+                  <li>✅ Expert advice on buying, selling & investing</li>
+                  <li>✅ Special discounts and seasonal offers</li>
+                  <li>✅ Upcoming housing societies & project launches</li>
+                </ul>
+              </div>
+              
               <div className="input flex">
                 <input type="text" placeholder="Email Address" />
                 <button>Subscribe</button>
