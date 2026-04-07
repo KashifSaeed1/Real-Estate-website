@@ -113,3 +113,20 @@ footer ul li {
   color: #666;
   line-height: 1.6;
 }
+
+.footer-link {
+  cursor: pointer;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+  color: #c7c5c5;              
+}
+
+.footer-link:hover {
+  color: #000;                 
+  text-decoration: underline;
+}
+
+.footer-link.active {
+  color: #817979;                    
+  font-weight: 600;
+}
