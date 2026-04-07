@@ -1,9 +1,48 @@
 import React, { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
 import "../modal/AuthModal.css";
 
-
 const AuthModal = ({ isOpen, onClose }) => {
-  const [isLogin, setIsLogin] = useState(true); 
+  const { signup, login } = useAuth();
+  const [isLogin, setIsLogin] = useState(true);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (isLogin) {
+      // LOGIN
+      const success = login(formData.email, formData.password);
+      if (success) onClose();
+    } else {
+      // SIGNUP
+      if (formData.password !== formData.confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      const success = signup({
+        fullName: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        password: formData.password,
+        confirmPassword: formData.confirmPassword,
+      });
+
+      if (success) onClose();
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -16,33 +55,23 @@ const AuthModal = ({ isOpen, onClose }) => {
         <p>Welcome to our Real Estate Platform</p>
 
         <div className="auth-tabs">
-          <button 
-            className={isLogin ? "active" : ""} 
-            onClick={() => setIsLogin(true)}
-          >
-            Login
-          </button>
-          <button 
-            className={!isLogin ? "active" : ""} 
-            onClick={() => setIsLogin(false)}
-          >
-            Sign Up
-          </button>
+          <button className={isLogin ? "active" : ""} onClick={() => setIsLogin(true)}>Login</button>
+          <button className={!isLogin ? "active" : ""} onClick={() => setIsLogin(false)}>Sign Up</button>
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           {!isLogin && (
             <>
-              <input type="text" placeholder="Full Name" required />
-              <input type="tel" placeholder="Phone Number" required />
+              <input type="text" name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} required />
+              <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required />
             </>
           )}
 
-          <input type="email" placeholder="Email Address" required />
-          <input type="password" placeholder="Password" required />
+          <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required />
+          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
 
           {!isLogin && (
-            <input type="password" placeholder="Confirm Password" required />
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required />
           )}
 
           {isLogin && (
