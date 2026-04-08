@@ -8,8 +8,10 @@ const Team = () => {
     <>
       <section className='team background'>
         <div className='container'>
-          <Heading title='Our Featured Agents' subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />
-
+        <Heading 
+          title='Our Featured Agents' 
+          subtitle='Our trusted property experts are here to provide personalized service, market insights, and seamless support to help you make the right real estate decisions.' 
+        />
           <div className='content mtop grid3'>
             {team.map((val, index) => (
               <div className='box' key={index}>
