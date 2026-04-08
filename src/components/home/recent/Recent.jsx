@@ -8,8 +8,11 @@ const Recent = () => {
     <>
       <section className='recent padding'>
         <div className='container'>
-          <Heading title='Recent Property Listed' subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />
-          <RecentCard />
+      <Heading 
+        title='Recent Property Listed' 
+        subtitle='Explore our latest property listings, featuring modern homes, apartments, and commercial spaces in prime locations at competitive prices.' 
+      />          
+      <RecentCard />
         </div>
       </section>
     </>

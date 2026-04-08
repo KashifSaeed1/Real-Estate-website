@@ -13,8 +13,7 @@ const About = () => {
           <div className='left row'>
             <Heading title='Our Agency Story' subtitle='Check out our company story and work process' />
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <p>Our real estate platform is designed to help you find the perfect property with ease and confidence. We offer a wide range of residential and commercial properties in prime locations, ensuring that every client finds a place that matches their lifestyle and budget. From modern apartments to luxury villas and office spaces, our listings are verified and regularly updated. Our experienced team is committed to providing transparent information, trusted guidance, and smooth transactions. Whether you are buying, selling, or renting, we make the entire process simple, secure, and efficient so you can focus on finding your dream property.</p>
             <button className='btn2'>More About Us</button>
           </div>
           <div className='right row'>
